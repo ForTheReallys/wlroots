@@ -99,8 +99,7 @@ struct roots_view {
 	bool maximized;
 	struct roots_output *fullscreen_output;
 	struct {
-		double x, y;
-		uint32_t width, height;
+		struct wlr_box box;
 		float rotation;
 	} saved;
 

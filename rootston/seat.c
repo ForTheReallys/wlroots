@@ -1332,8 +1332,8 @@ void roots_seat_begin_move(struct roots_seat *seat, struct roots_view *view) {
 	cursor->offs_x = cursor->cursor->x;
 	cursor->offs_y = cursor->cursor->y;
 	if (view->maximized) {
-		cursor->view_x = view->saved.x;
-		cursor->view_y = view->saved.y;
+		cursor->view_x = view->saved.box.x;
+		cursor->view_y = view->saved.box.y;
 	} else {
 		cursor->view_x = view->box.x;
 		cursor->view_y = view->box.y;
@@ -1352,10 +1352,10 @@ void roots_seat_begin_resize(struct roots_seat *seat, struct roots_view *view,
 	cursor->offs_x = cursor->cursor->x;
 	cursor->offs_y = cursor->cursor->y;
 	if (view->maximized) {
-		cursor->view_x = view->saved.x;
-		cursor->view_y = view->saved.y;
-		cursor->view_width = view->saved.width;
-		cursor->view_height = view->saved.height;
+		cursor->view_x = view->saved.box.x;
+		cursor->view_y = view->saved.box.y;
+		cursor->view_width = view->saved.box.width;
+		cursor->view_height = view->saved.box.height;
 	} else {
 		cursor->view_x = view->box.x;
 		cursor->view_y = view->box.y;
